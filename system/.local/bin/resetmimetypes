@@ -1,0 +1,233 @@
+# Remove Old Databases
+rm ~/.config/mimeapps.list >> /dev/null 2>&1
+rm ~/.local/share/applications/mimeinfo.cache >> /dev/null 2>&1
+rm ~/.local/share/applications/mimeinfo.list >> /dev/null 2>&1
+
+# Directory Node: lf
+# Open directory nodes in thunar
+xdg-mime default thunar.desktop inode/directory
+
+# Audio Files: audacious
+xdg-mime default audacious.desktop audio/basic
+xdg-mime default audacious.desktop audio/flac.wav
+xdg-mime default audacious.desktop audio/mp4
+xdg-mime default audacious.desktop audio/mpeg
+xdg-mime default audacious.desktop audio/ogg
+xdg-mime default audacious.desktop audio/opus
+xdg-mime default audacious.desktop audio/vnd.rn-realaudio
+xdg-mime default audacious.desktop audio/vnd.wav
+xdg-mime default audacious.desktop audio/vorbis
+xdg-mime default audacious.desktop audio/x-aiff
+xdg-mime default audacious.desktop audio/x-mpegurl
+
+# Video Files: mpv
+xdg-mime default mpv.desktop application/mpeg4-iod
+xdg-mime default mpv.desktop application/mpeg4-muxcodetable
+xdg-mime default mpv.desktop application/ogg
+xdg-mime default mpv.desktop application/vnd.apple.mpegurl
+xdg-mime default mpv.desktop application/x-quicktime-media-link
+xdg-mime default mpv.desktop application/x-quicktimeplayer
+xdg-mime default mpv.desktop application/x-shockwave-flash
+xdg-mime default mpv.desktop video/avi
+xdg-mime default mpv.desktop video/divx
+xdg-mime default mpv.desktop video/flv
+xdg-mime default mpv.desktop video/mp4
+xdg-mime default mpv.desktop video/mp4
+xdg-mime default mpv.desktop video/mp4v-es
+xdg-mime default mpv.desktop video/mpeg
+xdg-mime default mpv.desktop video/mpeg-system
+xdg-mime default mpv.desktop video/msvideo
+xdg-mime default mpv.desktop video/ogg
+xdg-mime default mpv.desktop video/quicktime
+xdg-mime default mpv.desktop video/vnd.divx
+xdg-mime default mpv.desktop video/vnd.mpegurl
+xdg-mime default mpv.desktop video/vnd.rn-realvideo
+xdg-mime default mpv.desktop video/webm
+xdg-mime default mpv.desktop video/x-avi
+xdg-mime default mpv.desktop video/x-flv
+xdg-mime default mpv.desktop video/x-m4v
+xdg-mime default mpv.desktop video/x-matroska
+xdg-mime default mpv.desktop video/x-mpeg
+xdg-mime default mpv.desktop video/x-mpeg-system
+xdg-mime default mpv.desktop video/x-mpeg2
+xdg-mime default mpv.desktop video/x-ms-wmv
+xdg-mime default mpv.desktop video/x-msvideo
+xdg-mime default mpv.desktop video/x-theora
+xdg-mime default mpv.desktop video/x-theora+ogg
+xdg-mime default mpv.desktop x-content/video-dvd
+xdg-mime default mpv.desktop x-content/video-svcd
+xdg-mime default mpv.desktop x-content/video-vcd
+
+# Images: NSXIV
+xdg-mime default nsxiv.desktop image/bmp
+xdg-mime default nsxiv.desktop image/gif
+xdg-mime default nsxiv.desktop image/jpegmix.desktop;
+xdg-mime default nsxiv.desktop image/jpg
+xdg-mime default nsxiv.desktop image/png
+xdg-mime default nsxiv.desktop image/tiff
+xdg-mime default nsxiv.desktop image/x-bmp
+xdg-mime default nsxiv.desktop image/x-eps
+xdg-mime default nsxiv.desktop image/x-ico
+xdg-mime default nsxiv.desktop image/x-icon
+xdg-mime default nsxiv.desktop image/x-xbitmap
+xdg-mime default nsxiv.desktop image/x-xpixmapq
+
+# Torrent Files: Transmission Remote
+xdg-mime default io.github.TransmissionRemoteGtk-gtk.desktop application/x-bittorrent
+xdg-mime default io.github.TransmissionRemoteGtk.desktop x-scheme-handler/magnet
+
+# Web Browser: Chromium Browser
+# xdg-mime default chromium.desktop application/rdf+xml
+# xdg-mime default chromium.desktop application/rss+xml
+# xdg-mime default chromium.desktop application/xhtml+xml
+# xdg-mime default chromium.desktop application/xhtml_xml
+# xdg-mime default chromium.desktop application/xml
+# # xdg-mime default chromium.desktop image/gif
+# # xdg-mime default chromium.desktop image/jpeg
+# # xdg-mime default chromoum.desktop image/png
+# # xdg-mime default chromium.desktop image/webp
+# xdg-mime default chromium.desktop text/html 
+# xdg-mime default chromium.desktop text/xml
+# xdg-mime default chromium.desktop x-scheme-handler/http
+# xdg-mime default chromium.desktop x-scheme-handler/https
+
+# Web Browser: Google-Chrome Browser
+xdg-mime default google-chrome.desktop application/rdf+xml
+xdg-mime default google-chrome.desktop application/rss+xml
+xdg-mime default google-chrome.desktop application/xhtml+xml
+xdg-mime default google-chrome.desktop application/xhtml_xml
+xdg-mime default google-chrome.desktop application/xml
+# xdg-mime default google-chrome.desktop image/gif
+# xdg-mime default google-chrome.desktop image/jpeg
+# xdg-mime default chromoum.desktop image/png
+# xdg-mime default google-chrome.desktop image/webp
+xdg-mime default google-chrome.desktop text/html 
+xdg-mime default google-chrome.desktop text/xml
+xdg-mime default google-chrome.desktop x-scheme-handler/http
+xdg-mime default google-chrome.desktop x-scheme-handler/https
+
+
+# Web Browser: Firefox
+# xdg-mime default firefox.desktop application/rdf+xml
+# xdg-mime default firefox.desktop application/rss+xml
+# xdg-mime default firefox.desktop application/xhtml+xml
+# xdg-mime default firefox.desktop application/xhtml_xml
+# xdg-mime default firefox.desktop application/xml
+# # xdg-mime default firefox.desktop image/gif
+# # xdg-mime default firefox.desktop image/jpeg
+# # xdg-mime default firefox.desktop image/png
+# # xdg-mime default firefox.desktop image/webp
+# xdg-mime default firefox.desktop text/html 
+# xdg-mime default firefox.desktop text/xml
+# xdg-mime default firefox.desktop x-scheme-handler/http
+# xdg-mime default firefox.desktop x-scheme-handler/https
+
+# Mobi Ebooks: calibre-ebook-reader
+xdg-mime default calibre-ebook-viewer.desktop application/x-mobi8-ebook
+xdg-mime default calibre-ebook-viewer.desktop application/x-mobipocket-ebook
+
+# Text and Source Code: Emacsclient
+xdg-mime default emacsclient.desktop application/x-shellscript
+xdg-mime default emacsclient.desktop text/english
+xdg-mime default emacsclient.desktop text/markdown
+xdg-mime default emacsclient.desktop text/plain
+xdg-mime default emacsclient.desktop text/x-c
+xdg-mime default emacsclient.desktop text/x-c++
+xdg-mime default emacsclient.desktop text/x-c++hdr
+xdg-mime default emacsclient.desktop text/x-c++src
+xdg-mime default emacsclient.desktop text/x-chdr
+xdg-mime default emacsclient.desktop text/x-csrc
+xdg-mime default emacsclient.desktop text/x-java
+xdg-mime default emacsclient.desktop text/x-makefile
+xdg-mime default emacsclient.desktop text/x-moc
+xdg-mime default emacsclient.desktop text/x-pascal
+xdg-mime default emacsclient.desktop text/x-tcl
+xdg-mime default emacsclient.desktop text/x-tex
+
+# PDF/EPUB: Emacsclient
+# xdg-mime default emacsclient.desktop application/eps
+# xdg-mime default emacsclient.desktop application/epub+zip
+# xdg-mime default emacsclient.desktop application/oxps
+# xdg-mime default emacsclient.desktop application/pdf
+# xdg-mime default emacsclient.desktop application/postscript
+# xdg-mime default emacsclient.desktop application/ps
+# xdg-mime default emacsclient.desktop application/x-fictionbook;
+# xdg-mime default emacsclient.desktop image/eps
+# xdg-mime default emacsclient.desktop image/vnd.djvu
+# xdg-mime default emacsclient.desktop image/vnd.djvu+multipage
+
+# PDF ePUB: Zathura
+# xdg-mime default org.pwmt.zathura.desktop application/eps              
+# xdg-mime default org.pwmt.zathura.desktop application/epub+zip         
+# xdg-mime default org.pwmt.zathura.desktop application/oxps             
+# xdg-mime default org.pwmt.zathura.desktop application/pdf              
+# xdg-mime default org.pwmt.zathura.desktop application/postscript       
+# xdg-mime default org.pwmt.zathura.desktop application/ps               
+# xdg-mime default org.pwmt.zathura.desktop application/x-fictionbook;   
+# xdg-mime default org.pwmt.zathura.desktop image/eps                    
+# xdg-mime default org.pwmt.zathura.desktop image/vnd.djvu               
+# xdg-mime default org.pwmt.zathura.desktop image/vnd.djvu+multipage
+
+# PDF ePUB: Evince
+xdg-mime default org.gnome.Evince.desktop application/eps              
+# xdg-mime default org.gnome.Evince.desktop application/epub+zip         
+xdg-mime default org.gnome.Evince.desktop application/oxps             
+xdg-mime default org.gnome.Evince.desktop application/pdf              
+xdg-mime default org.gnome.Evince.desktop application/postscript       
+xdg-mime default org.gnome.Evince.desktop application/ps               
+# xdg-mime default org.gnome.Evince.desktop application/x-fictionbook;   
+# xdg-mime default org.gnome.Evince.desktop image/eps                    
+# xdg-mime default org.gnome.Evince.desktop image/vnd.djvu               
+# xdg-mime default org.gnome.Evince.desktop image/vnd.djvu+multipage
+
+# Comics Files: Zathura
+# xdg-mime default org.pwmt.zathura.desktop application/vnd.comicbook+zip
+# xdg-mime default org.pwmt.zathura.desktop application/vnd.comicbook-rar
+
+# Libreoffice Writer
+xdg-mime default libreoffice-writer.desktop application/vnd.oasis.opendocument.text
+xdg-mime default libreoffice-writer.desktop application/vnd.oasis.opendocument.text
+xdg-mime default libreoffice-writer.desktop application/vnd.oasis.opendocument.text-template
+xdg-mime default libreoffice-writer.desktop application/vnd.oasis.opendocument.text-web
+xdg-mime default libreoffice-writer.desktop application/vnd.oasis.opendocument.text-master
+xdg-mime default libreoffice-writer.desktop application/vnd.oasis.opendocument.text-master-template
+xdg-mime default libreoffice-writer.desktop application/vnd.sun.xml.writer
+xdg-mime default libreoffice-writer.desktop application/vnd.sun.xml.writer.template
+xdg-mime default libreoffice-writer.desktop application/vnd.sun.xml.writer.global
+xdg-mime default libreoffice-writer.desktop application/msword
+xdg-mime default libreoffice-writer.desktop application/vnd.ms-word
+xdg-mime default libreoffice-writer.desktop application/x-doc
+xdg-mime default libreoffice-writer.desktop application/x-hwp
+xdg-mime default libreoffice-writer.desktop application/rtf
+xdg-mime default libreoffice-writer.desktop text/rtf
+xdg-mime default libreoffice-writer.desktop application/vnd.wordperfect
+xdg-mime default libreoffice-writer.desktop application/wordperfect
+xdg-mime default libreoffice-writer.desktop application/vnd.lotus-wordpro
+xdg-mime default libreoffice-writer.desktop application/vnd.openxmlformats-officedocument.wordprocessingml.document
+xdg-mime default libreoffice-writer.desktop application/vnd.ms-word.document.macroEnabled.12
+xdg-mime default libreoffice-writer.desktop application/vnd.openxmlformats-officedocument.wordprocessingml.template
+xdg-mime default libreoffice-writer.desktop application/vnd.ms-word.template.macroEnabled.12
+xdg-mime default libreoffice-writer.desktop application/vnd.ms-works
+xdg-mime default libreoffice-writer.desktop application/vnd.stardivision.writer-global
+xdg-mime default libreoffice-writer.desktop application/x-extension-txt
+xdg-mime default libreoffice-writer.desktop application/x-t602
+xdg-mime default libreoffice-writer.desktop application/vnd.oasis.opendocument.text-flat-xml
+xdg-mime default libreoffice-writer.desktop application/x-fictionbook+xml
+xdg-mime default libreoffice-writer.desktop application/macwriteii
+xdg-mime default libreoffice-writer.desktop application/x-aportisdoc
+xdg-mime default libreoffice-writer.desktop application/prs.plucker
+xdg-mime default libreoffice-writer.desktop application/vnd.palm
+xdg-mime default libreoffice-writer.desktop application/clarisworks
+xdg-mime default libreoffice-writer.desktop application/x-sony-bbeb
+xdg-mime default libreoffice-writer.desktop application/x-abiword
+xdg-mime default libreoffice-writer.desktop application/x-iwork-pages-sffpages
+xdg-mime default libreoffice-writer.desktop application/x-mswrite
+xdg-mime default libreoffice-writer.desktop application/x-starwriter
+
+# FTP Scheme-Handler: Filezilla
+xdg-mime default filezilla.desktop x-scheme-handler/ftp
+
+# Org-Protocol Scheme-Handler: emacsclient
+xdg-mime default org-protocol.desktop x-scheme-handler/org-protocol
+
+update-desktop-database ~/.local/share/applications/

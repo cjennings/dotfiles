@@ -1,0 +1,13 @@
+#EXTM3U
+#RADIOBROWSERUUID:96260f22-0601-11e8-ae97-52543be04c81
+#EXTINF:1,WWNO Jazz Stream - University of New Orleans, LA
+http://tektite.streamguys1.com:5140/wwnojazz-mp3
+
+#RADIOBROWSERUUID:96260dab-0601-11e8-ae97-52543be04c81
+#EXTINF:1,WWNO 89.9 University of New Orleans, LA
+http://tektite.streamguys1.com:5140/wwnolive-mp3
+
+#RADIOBROWSERUUID:96260e6a-0601-11e8-ae97-52543be04c81
+#EXTINF:1,WWNO Classical Stream - University of New Orleans, LA
+http://tektite.streamguys1.com:5140/wwnoclassical-mp3
+

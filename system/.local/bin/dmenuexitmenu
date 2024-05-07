@@ -1,0 +1,12 @@
+#!/bin/sh
+
+menuitems=("Lock  \nSuspend 󰤄 \nLogout 󰩈 \nReboot 󰁪 \nShutdown  \nCancel 󰜺")
+choice=$(echo -e $menuitems | dmenu -nb "#DAA520" -nf "#2E3440" -sb "#2E3440" -sf "#DAA520")
+
+case "$choice" in
+	"Logout 󰩈 ") loginctl terminate-user $(whoami) ;;
+	"Lock  ") slock ;;
+	"Suspend 󰤄 ") systemctl suspend;;
+	"Shutdown  ") systemctl poweroff;;
+	"Reboot 󰁪 ")  systemctl reboot ;;
+esac

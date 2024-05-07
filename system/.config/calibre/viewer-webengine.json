@@ -1,0 +1,225 @@
+{
+  "local_storage": {
+    "search-bar-history-search-for-sc": [
+      "black",
+      "dark",
+      "reverse",
+      "invert",
+      "quit"
+    ]
+  },
+  "main_window_geometry": {
+    "__class__": "bytearray",
+    "__value__": "AdnQywADAAAAAAAAAAAAEwAABd8AAAPqAAAAAAAAABMAAAXfAAAD6gAAAAAAAAAABeAAAAAAAAAAEwAABd8AAAPq"
+  },
+  "main_window_state": {
+    "__class__": "bytearray",
+    "__value__": "AAAA/wAAAAH9AAAAAgAAAAAAAAAAAAAAAPwCAAAAAvsAAAAQAHQAbwBjAC0AZABvAGMAawAAAAAA/////wAAAIwA////+wAAABYAcwBlAGEAcgBjAGgALQBkAG8AYwBrAAAAAAD/////AAAAnQD///8AAAABAAAAAAAAAAD8AgAAAAT7AAAAFgBsAG8AbwBrAHUAcAAtAGQAbwBjAGsAAAAAAP////8AAACIAP////sAAAAcAGIAbwBvAGsAbQBhAHIAawBzAC0AZABvAGMAawAAAAAA/////wAAAPgA////+wAAABwAaQBuAHMAcABlAGMAdABvAHIALQBkAG8AYwBrAAAAAAD/////AAAAFQD////7AAAAHgBoAGkAZwBoAGwAaQBnAGgAdABzAC0AZABvAGMAawAAAAAA/////wAAANcA////AAAF4AAAA9gAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAAAAAAAAQAAAB4AYQBjAHQAaQBvAG4AcwBfAHQAbwBvAGwAYgBhAHICAAAAAP////8AAAAAAAAAAA=="
+  },
+  "old_prefs_migrated": true,
+  "session_data": {
+    "base_font_size": 44,
+    "controls_help_shown_count": 2,
+    "current_color_scheme": "black",
+    "keyboard_shortcuts": {
+      "quit": [
+        {
+          "altKey": false,
+          "ctrlKey": false,
+          "key": "q",
+          "metaKey": false,
+          "shiftKey": false
+        }
+      ]
+    },
+    "margin_bottom": 100,
+    "margin_left": 100,
+    "margin_right": 100,
+    "margin_top": 100,
+    "standalone_font_settings": {
+      "minimum_font_size": 12,
+      "mono_family": "Fira Code",
+      "sans_family": "Verdana",
+      "serif_family": "Palatino Linotype"
+    },
+    "standalone_misc_settings": {
+      "remember_last_read": true,
+      "remember_window_geometry": false,
+      "save_annotations_in_ebook": true,
+      "singleinstance": false
+    },
+    "standalone_recently_opened": [
+      {
+        "key": "/home/cjennings/.local/opt/tor-browser/app/Browser/downloads/Love and Rockets #1 (1981) [Pyramid].cbz",
+        "pathtoebook": "/home/cjennings/.local/opt/tor-browser/app/Browser/downloads/Love and Rockets #1 (1981) [Pyramid].cbz",
+        "timestamp": "2022-08-23T16:40:22.898Z",
+        "title": "Love and Rockets #1 (1981) [Pyramid]"
+      },
+      {
+        "key": "/home/cjennings/.local/opt/tor-browser/app/Browser/downloads/Love & Rockets v1 #05 (March 1984) [Cclay].cbr",
+        "pathtoebook": "/home/cjennings/.local/opt/tor-browser/app/Browser/downloads/Love & Rockets v1 #05 (March 1984) [Cclay].cbr",
+        "timestamp": "2022-08-23T16:40:04.599Z",
+        "title": "Love & Rockets v1 #05 (March 1984) [Cclay]"
+      },
+      {
+        "key": "/tmp/mozilla_cjennings0/Love & Rockets v1 #05 (March 1984) [Cclay].cbr",
+        "pathtoebook": "/tmp/mozilla_cjennings0/Love & Rockets v1 #05 (March 1984) [Cclay].cbr",
+        "timestamp": "2022-08-23T16:31:27.722Z",
+        "title": "Love & Rockets v1 #05 (March 1984) [Cclay]"
+      },
+      {
+        "authors": [
+          "George Grätzer"
+        ],
+        "key": "/home/cjennings/Library/George Gratzer/More Math Into LaTeX (27737)/More Math Into LaTeX - George Gratzer.mobi",
+        "pathtoebook": "/home/cjennings/Library/George Gratzer/More Math Into LaTeX (27737)/More Math Into LaTeX - George Gratzer.mobi",
+        "timestamp": "2022-01-14T10:36:05.803Z",
+        "title": "More Math Into LaTeX"
+      },
+      {
+        "authors": [
+          "Simenon Georges"
+        ],
+        "key": "/home/cjennings/Library/Simenon Georges/050 Maigret's Little Joke (27730)/050 Maigret's Little Joke - Simenon Georges.mobi",
+        "pathtoebook": "/home/cjennings/Library/Simenon Georges/050 Maigret's Little Joke (27730)/050 Maigret's Little Joke - Simenon Georges.mobi",
+        "timestamp": "2022-01-10T12:32:52.530Z",
+        "title": "050 Maigret's Little Joke"
+      },
+      {
+        "authors": [
+          "Will Durant"
+        ],
+        "key": "/home/cjennings/Library/Will Durant/Story of Philosophy (3224)/Story of Philosophy - Will Durant.azw3",
+        "pathtoebook": "/home/cjennings/Library/Will Durant/Story of Philosophy (3224)/Story of Philosophy - Will Durant.azw3",
+        "timestamp": "2022-01-05T19:33:13.710Z",
+        "title": "Story of Philosophy"
+      },
+      {
+        "authors": [
+          "P G Wodehouse"
+        ],
+        "key": "/home/cjennings/Library/P. G. Wodehouse/Laughing Gas (24469)/Laughing Gas - P. G. Wodehouse.mobi",
+        "pathtoebook": "/home/cjennings/Library/P. G. Wodehouse/Laughing Gas (24469)/Laughing Gas - P. G. Wodehouse.mobi",
+        "timestamp": "2022-01-03T00:51:21.126Z",
+        "title": "Laughing Gas"
+      },
+      {
+        "authors": [
+          "Peter Seibel"
+        ],
+        "key": "/home/cjennings/Library/Peter Seibel/Coders at Work_ Reflections on the Craft of Programming (316)/Coders at Work_ Reflections on the Craft o - Peter Seibel.htmlz",
+        "pathtoebook": "/home/cjennings/Library/Peter Seibel/Coders at Work_ Reflections on the Craft of Programming (316)/Coders at Work_ Reflections on the Craft o - Peter Seibel.htmlz",
+        "timestamp": "2022-01-03T00:38:17.903Z",
+        "title": "Coders at Work"
+      },
+      {
+        "authors": [
+          "by Mike Gancarz"
+        ],
+        "key": "/home/cjennings/Downloads/torrents/files/Linux and the Unix Philosophy by Mike Gancarz (z-lib.org).epub",
+        "pathtoebook": "/home/cjennings/Downloads/torrents/files/Linux and the Unix Philosophy by Mike Gancarz (z-lib.org).epub",
+        "timestamp": "2022-01-02T23:44:59.829Z",
+        "title": "4362"
+      },
+      {
+        "authors": [
+          "Margaret Dauler Wilson"
+        ],
+        "key": "/home/cjennings/Library/Margaret Dauler Wilson/Descartes (86)/Descartes - Margaret Dauler Wilson.mobi",
+        "pathtoebook": "/home/cjennings/Library/Margaret Dauler Wilson/Descartes (86)/Descartes - Margaret Dauler Wilson.mobi",
+        "timestamp": "2022-01-02T14:20:51.792Z",
+        "title": "Descartes (Arguments of the Philosophers)"
+      },
+      {
+        "authors": [
+          "Alexander Tarlinder"
+        ],
+        "key": "/home/cjennings/Library/Alexander Tarlinder/Developer Testing_ Building Quality Into Software (26)/Developer Testing_ Building Quality Into S - Alexander Tarlinder.azw3",
+        "pathtoebook": "/home/cjennings/Library/Alexander Tarlinder/Developer Testing_ Building Quality Into Software (26)/Developer Testing_ Building Quality Into S - Alexander Tarlinder.azw3",
+        "timestamp": "2022-01-02T03:53:52.454Z",
+        "title": "Developer Testing: Building Quality into Software (Addison-Wesley Signature Series (Cohn))"
+      },
+      {
+        "authors": [
+          "Dieter Lohmar, Jagna Brudzinska"
+        ],
+        "key": "/home/cjennings/Library/Dieter Lohmar/Founding Psychoanalysis Phenomenologically_ Phenomenological Theory of Subjectivity and the Ps (17064)/Founding Psychoanalysis Phenomenologically - Dieter Lohmar.pdf",
+        "pathtoebook": "/home/cjennings/Library/Dieter Lohmar/Founding Psychoanalysis Phenomenologically_ Phenomenological Theory of Subjectivity and the Ps (17064)/Founding Psychoanalysis Phenomenologically - Dieter Lohmar.pdf",
+        "timestamp": "2022-01-01T22:55:44.420Z",
+        "title": "Founding Psychoanalysis Phenomenologically: Phenomenological Theory of Subjectivity and the Psychoanalytic Experience (Phaenomenologica, 199)"
+      },
+      {
+        "authors": [
+          "Kevin Passmore"
+        ],
+        "key": "/home/cjennings/Library/Kevin Passmore/Fascism_ A Very Short Introduction (5508)/Fascism_ A Very Short Introduction - Kevin Passmore.mobi",
+        "pathtoebook": "/home/cjennings/Library/Kevin Passmore/Fascism_ A Very Short Introduction (5508)/Fascism_ A Very Short Introduction - Kevin Passmore.mobi",
+        "timestamp": "2021-11-01T00:49:09.044Z",
+        "title": "Fascism: A Very Short Introduction (Very Short Introductions)"
+      },
+      {
+        "authors": [
+          "Lewis Carroll"
+        ],
+        "key": "/home/cjennings/Library/Lewis Carroll/Alice's Adventures in Wonderland_ &, Through the Looking-Glass (784)/Alice's Adventures in Wonderland_ &, Throu - Lewis Carroll.mobi",
+        "pathtoebook": "/home/cjennings/Library/Lewis Carroll/Alice's Adventures in Wonderland_ &, Through the Looking-Glass (784)/Alice's Adventures in Wonderland_ &, Throu - Lewis Carroll.mobi",
+        "timestamp": "2021-11-01T00:48:02.197Z",
+        "title": "Alice's Adventures in Wonderland and Through the Looking-Glass"
+      },
+      {
+        "authors": [
+          "Timothy Snyder"
+        ],
+        "key": "/home/cjennings/Library/Timothy Snyder/On Tyranny_ Twenty Lessons From the Twentieth Century (635)/On Tyranny_ Twenty Lessons From the Twenti - Timothy Snyder.azw3",
+        "pathtoebook": "/home/cjennings/Library/Timothy Snyder/On Tyranny_ Twenty Lessons From the Twentieth Century (635)/On Tyranny_ Twenty Lessons From the Twenti - Timothy Snyder.azw3",
+        "timestamp": "2021-10-31T22:46:48.986Z",
+        "title": "On Tyranny: Twenty Lessons from the Twentieth Century"
+      },
+      {
+        "authors": [
+          "Cristóbal Rovira Kaltwasser, Paul Taggart, Paulina Ochoa Espejo and Pierre Ostiguy"
+        ],
+        "key": "/home/cjennings/Library/Cristobal Rovira Kaltwasser/The Oxford Handbook of Populism (8081)/The Oxford Handbook of Populism - Cristobal Rovira Kaltwasser.azw3",
+        "pathtoebook": "/home/cjennings/Library/Cristobal Rovira Kaltwasser/The Oxford Handbook of Populism (8081)/The Oxford Handbook of Populism - Cristobal Rovira Kaltwasser.azw3",
+        "timestamp": "2021-10-31T22:45:42.015Z",
+        "title": "The Oxford Handbook of Populism (Oxford Handbooks)"
+      },
+      {
+        "authors": [
+          "Richard Sennett"
+        ],
+        "key": "/home/cjennings/Library/Richard Sennett/The Craftsman (348)/The Craftsman - Richard Sennett.htmlz",
+        "pathtoebook": "/home/cjennings/Library/Richard Sennett/The Craftsman (348)/The Craftsman - Richard Sennett.htmlz",
+        "timestamp": "2021-10-16T20:12:17.272Z",
+        "title": "The Craftsman"
+      },
+      {
+        "authors": [
+          "Christine Ciarmello"
+        ],
+        "key": "/home/cjennings/Documents/Ciarmello-Soul-Tree.pdf",
+        "pathtoebook": "/home/cjennings/Documents/Ciarmello-Soul-Tree.pdf",
+        "timestamp": "2021-08-21T19:32:09.736Z",
+        "title": "Ciarmello-Soul-Tree"
+      },
+      {
+        "authors": [
+          "Robert Mecklenburg"
+        ],
+        "key": "/home/cjennings/Library/Robert Mecklenburg/Managing Projects With GNU Make (12231)/Managing Projects With GNU Make - Robert Mecklenburg.pdf",
+        "pathtoebook": "/home/cjennings/Library/Robert Mecklenburg/Managing Projects With GNU Make (12231)/Managing Projects With GNU Make - Robert Mecklenburg.pdf",
+        "timestamp": "2021-08-21T19:30:54.331Z",
+        "title": "Managing Projects With GNU Make"
+      },
+      {
+        "authors": [
+          "John Graham-Cumming"
+        ],
+        "key": "/home/cjennings/Library/John Graham-Cumming/The GNU Make Book (9542)/The GNU Make Book - John Graham-Cumming.pdf",
+        "pathtoebook": "/home/cjennings/Library/John Graham-Cumming/The GNU Make Book (9542)/The GNU Make Book - John Graham-Cumming.pdf",
+        "timestamp": "2021-08-21T19:23:09.672Z",
+        "title": "The GNU Make Book"
+      }
+    ]
+  }
+}

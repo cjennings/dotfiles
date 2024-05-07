@@ -1,0 +1,27 @@
+{
+  "disabled_plugins": {
+    "__class__": "set",
+    "__value__": []
+  },
+  "enabled_plugins": {
+    "__class__": "set",
+    "__value__": [
+      "Google Images",
+      "Big Book Search"
+    ]
+  },
+  "filetype_mapping": {},
+  "plugin_customization": {},
+  "plugins": {
+    "Clean Comments": "/home/cjennings/.config/calibre/plugins/Clean Comments.zip",
+    "Comments Cleaner": "/home/cjennings/.config/calibre/plugins/Comments Cleaner.zip",
+    "Extract ISBN": "/home/cjennings/.config/calibre/plugins/Extract ISBN.zip",
+    "Favourites Menu": "/home/cjennings/.config/calibre/plugins/Favourites Menu.zip",
+    "Find Duplicates": "/home/cjennings/.config/calibre/plugins/Find Duplicates.zip",
+    "Kindle hi-res covers": "/home/cjennings/.config/calibre/plugins/Kindle hi-res covers.zip",
+    "Kobo Utilities": "/home/cjennings/.config/calibre/plugins/Kobo Utilities.zip",
+    "KoboTouchExtended": "/home/cjennings/.config/calibre/plugins/KoboTouchExtended.zip",
+    "Open With": "/home/cjennings/.config/calibre/plugins/Open With.zip",
+    "Reading List": "/home/cjennings/.config/calibre/plugins/Reading List.zip"
+  }
+}

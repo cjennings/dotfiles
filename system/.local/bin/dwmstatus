@@ -1,0 +1,79 @@
+#!/bin/sh
+# displays status of microphone, camera, wifi, free home disk space, and date/time
+# uses icons found in nerd fonts here: https://github.com/ryanoasis/nerd-fonts.git
+
+export DISPLAY=:0
+unset status
+
+##########################################################################
+# MIC                                                                    #
+##########################################################################
+
+# micsymbol_on=""
+# micsymbol_off=""
+
+# amixer get Capture | grep '\[off\]' && mic="$micsymbol_off" || mic="$micsymbol_on"
+# status="$mic "
+
+
+##########################################################################
+# VOLUME                                                                 #
+##########################################################################
+
+speakersymbol=""
+if grep -q "yes" <<< $(pactl get-sink-mute $(pactl get-default-sink)) ; then
+	speakersymbol=""
+	vol=""
+else
+	vol=$(echo $(pactl get-sink-volume $(pactl get-default-sink)) | cut -d"/" -f2 | xargs)
+fi
+status+="$speakersymbol $vol "
+
+
+##########################################################################
+# WIFI                                                                   #
+##########################################################################
+
+wifisymbol_on=""
+wifisymbol_off=""
+# note: assumes we're using network-manager
+ssid="$(nmcli -t -f active,ssid dev wifi | grep -E '^yes' | cut -d: -f2)"
+wifi="$wifisymbol_off"
+if [ "$ssid" != "" ]; then wifi="$wifisymbol_on $ssid"; fi
+status+="$wifi "
+
+
+##########################################################################
+# BATTERY                                                                #
+##########################################################################
+
+# desktops don't typically have batteries. if no batteries are found, skip this section
+if [[ -n $(find /sys/class/power_supply/ -name "BAT?") ]]; then
+
+      # however, laptops may have multiple batteries, so list them individually
+	  for battery in /sys/class/power_supply/BAT?; do
+            batstat=$(sed "s/[Dd]ischarging/󱟞/;s/[Nn]ot charging/󰁹/;s/[Cc]harging/󰂄/;s/[Uu]nknown//;s/[Ff]ull//" "$battery"/status)
+		    battery_level=$(cat "$battery"/capacity 2>/dev/null)
+		    status+="${batstat} ${battery_level}% "
+	  done
+fi
+
+
+##########################################################################
+# /HOME DISK                                                             #
+##########################################################################
+
+# disksymbol=""
+# disk=$(df -hl | awk '{ if ($6 == "/home") print $4 " free" }')
+# status+="$disksymbol $disk "
+
+
+##########################################################################
+# DATE / TIME                                                            #
+##########################################################################
+
+# Format Example: Thu Mar 25 03:37 PM CDT
+calendarsymbol=""
+status+="$calendarsymbol $(/bin/date +'%a %b %d %I:%M %p %Z')"
+
+xsetroot -name "$status"

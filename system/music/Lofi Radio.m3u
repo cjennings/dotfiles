@@ -1,0 +1,17 @@
+#EXTM3U
+#RADIOBROWSERUUID:4f4a3176-343c-4571-ac03-0dad7c5f0a09
+#EXTINF:1,Chillofi radio
+http://streams.dez.ovh:8000/radio.mp3
+
+#RADIOBROWSERUUID:d22dce6f-c07a-4c3b-a33b-fc407db4d765
+#EXTINF:1,Lofi Radio
+https://play.streamafrica.net/lofiradio
+
+#RADIOBROWSERUUID:736f1666-c4ad-4373-a434-8a6550b2a9cc
+#EXTINF:1,Lofi Radio
+https://play.streamafrica.net/lofiradio
+
+#RADIOBROWSERUUID:9320ff13-6919-49b7-9b5d-0eb313e046d6
+#EXTINF:1,BOX : Lofi Radio
+https://play.streamafrica.net/lofiradio
+

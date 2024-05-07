@@ -1,0 +1,15 @@
+{
+  "ignore_fields": [
+    "rating",
+    "series"
+  ],
+  "tag_map_rules": [
+    {
+      "action": "remove",
+      "match_type": "not_one_of",
+      "query": "Art, Biography & Autobiography, Business, Chess, Computers, Cooking, Critical Theory, Design, Economics, Fiction, French, History, Law, Linguistics, Literature, Magic, Mathematics, Music, Mythology, Non Fiction, Philosophy, Poetry, Political Science, Politics, Psychology, Religion, Science, Social Critique, Sociology, Travel",
+      "replace": ""
+    }
+  ],
+  "txt_comments": true
+}

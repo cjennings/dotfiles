@@ -1,0 +1,18 @@
+{
+  "map": {
+    "Interface Action: Extract ISBN (Extract ISBN) - qaction": [
+      "Ctrl+I"
+    ],
+    "Interface Action: Open With (Open With) : menu action : EPUBZathura (EPUB)": [
+      "Z"
+    ],
+    "Interface Action: Open With (Open With) : menu action : PDFZathura (PDF)": [
+      "Shift+Z"
+    ],
+    "Toggle Quickview": [],
+    "quit calibre": [
+      "Q"
+    ]
+  },
+  "options_map": {}
+}

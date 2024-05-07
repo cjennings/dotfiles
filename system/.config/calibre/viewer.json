@@ -1,0 +1,13 @@
+{
+  "print-to-pdf-bottom-margin": 1.0,
+  "print-to-pdf-geometry": {
+    "__class__": "bytearray",
+    "__value__": "AdnQywADAAAAAAEjAAAA7AAAAyQAAAIpAAABJQAAAO4AAAMiAAACJwAAAAAAAAAABVYAAAElAAAA7gAAAyIAAAIn"
+  },
+  "print-to-pdf-left-margin": 1.0,
+  "print-to-pdf-page-numbers": false,
+  "print-to-pdf-page-size": "letter",
+  "print-to-pdf-right-margin": 1.0,
+  "print-to-pdf-show-file": true,
+  "print-to-pdf-top-margin": 1.0
+}

@@ -1,0 +1,50 @@
+#!/bin/sh
+# Craig Jennings
+# convenience script to switch monitors
+
+# this script assumes there are at most two monitors attached and we want to switch between then
+CHOICES="Laptop\nLaptop-Scaled\nHome-Display\nExternal-Auto\nExternal-Scaled\nVirtualbox"
+
+# laptops always have a monitor connected when running the script.
+LAPTOP=$(xrandr -q | grep primary | awk '$2 == "connected" {print $1}')
+echo "primary monitor is $LAPTOP"
+
+# an external monitor will always be a connected monitor that isn't primary
+EXTERNAL=$(xrandr -q | grep -v primary | awk '$2 == "connected" {print $1}')
+
+# start by resetting
+xrandr -s 0
+
+# disable if called automatically, otherwise you'll want the menu
+# if there's only one monitor connected, setup laptop monitor
+# if [ -z "$EXTERNAL" ]; then
+# 	xrandr -s 0
+#     xrandr --output "$LAPTOP" --auto --dpi 144 --scale 0.6
+# 	exit 0
+# fi
+
+CHOSEN=$(echo -e "$CHOICES" | dmenu -i)
+
+case "$CHOSEN" in
+"Laptop")
+	xrandr --output "$LAPTOP" --auto --output "$EXTERNAL" --off
+	;;
+"Laptop-Scaled")
+	xrandr --output "$LAPTOP" --auto --dpi 144 --scale 0.6 --output "$EXTERNAL" --off
+	;;
+"External")
+	xrandr --output "$EXTERNAL" --auto --dpi 96 --mode 3440x1440 --scale 1.0 --output "$LAPTOP" --off
+	;;
+"External-Auto")
+	xrandr --output "$EXTERNAL" --auto --output "$LAPTOP" --off
+	;;
+"External-Scaled")
+	xrandr --output "$EXTERNAL" --auto --scale 0.6 --output "$LAPTOP" --off
+    ;;
+"Virtualbox")
+    xrandr --output "$LAPTOP" --auto --mode 1920x1080
+    ;;
+esac
+
+# restore the wallpaper after resolution change
+nitrogen --restore

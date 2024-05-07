@@ -1,0 +1,90 @@
+#!/usr/bin/env bash
+# Craig Jennings <c@cjennings.net>
+# Basically just a bash wrapper around a find/grep/awk command pipe
+# to generate m3u playlists from video or audio files in a directory.
+
+# One m3u playlist will be placed in the MUSIC_DIR, and another
+# will be placed inside each playlist directory.
+# It also converts .opus and .ogg files to .m4a for Android playback.
+
+# Note:
+# This script requires the following utilities to be on the path:
+# mid3v2 (aur package: python-mutagen)
+# tageditor (aur package: tageditor)
+
+set -e
+
+MUSIC_DIR="$HOME/music"
+REQUIRED_TOOLS=("mid3v2" "tageditor")
+
+#  ---------------------------- Functions ----------------------------
+
+usage () {
+    printf "\nUsage: mkplaylist <playlist_name>\n\n"
+    printf "mkplaylist - creates an m3u playlist in the $MUSIC_DIR directory\n"
+    printf "based the music and video files in directory which m3uplaylist is called.\n\n"
+    printf " - this script should be run in the directory containing the music or video files\n"
+    printf " - <playlist_name> is mandatory and shouldn't end with '.m3u' extension\n"
+    printf " - change the destination ($MUSIC_DIR) by editing this script\n\n"
+}
+
+tag_music_file() {
+    while IFS= read -r file; do
+        # Extract artist and song title from filename
+        artist=$(basename "$file" | cut -d '-' -f 1)
+        title=$(basename "$file" | cut -d '-' -f 2 | cut -d '.' -f 1)
+
+        # Delete all tags using mid3v2
+        mid3v2 --delete-all "$file"
+
+        # Set artist and song title tags using mid3v2
+        mid3v2 --artist="$artist" --song="$title" "$file"
+    done
+}
+
+generate_music_m3u() {
+    printf "retagging music files....\n"
+    find "$(pwd)" -print | file -if - | grep -E '(audio)' | awk -F: '{print $1}' | tag_music_file
+
+	printf "generating playlist.'%s'...\n" "$LOCAL_PLAYLIST"
+    find "$(pwd)" -print | file -if - | grep -E '(video|audio)' |
+        awk -F: '{print $1}' | while read -r line; do basename "$line"; done > "$LOCAL_PLAYLIST"
+	printf "generating playlist '%s'....\n" "$MUSIC_PLAYLIST"
+    find "$(pwd)" -print | file -if - | grep -E '(video|audio)' | awk -F: '{print $1}' > "$MUSIC_PLAYLIST"
+    printf "Done.\n\n"
+}
+
+#  ----------------------------- Script ----------------------------
+
+# display usage if user specifically requests it
+TYPE=$(tr '[a-z]' '[A-Z]' <<< "$@");
+[ "$TYPE" = "HELP" ] && usage && exit 1
+[ "$TYPE" = "-H" ] &&  usage&& exit 1
+
+# check that all necessary tools are installed
+for tool in ${REQUIRED_TOOLS[@]}; do
+  if ! type "$tool" >/dev/null 2>&1; then
+	printf "ERROR: The script requires '%s' but it is not installed or not in PATH.\n" "$tool"
+	exit 1
+  fi
+done
+
+# use directory name for playlist name when parameter doesn't exist
+if [ $# -eq 0 ]
+then
+    set -- "$(basename "$PWD")"
+	echo "no playlist name entered, so using directory name: '$(basename "$PWD")'"
+fi
+
+# ask to overwrite if the playlist already exists
+MUSIC_PLAYLIST="$MUSIC_DIR/$@.m3u"
+LOCAL_PLAYLIST="./$@.m3u"
+
+if [ -f "$MUSIC_PLAYLIST" ]; then
+    read -p "$MUSIC_PLAYLIST exists. Overwrite (y/n) " yn
+    if [ "$yn" != "y" ] && [ "$yn" != "Y" ]; then
+        exit 0
+    fi
+fi
+
+generate_music_m3u

@@ -1,0 +1,59 @@
+# SXHDRC
+# This is the sxhkdrc for the Simple X Hotkey Daemon.
+# https://github.com/baskerville/sxhkd
+
+
+# Emacs client or emacs if client fails
+super + e
+     emacsclient -c -a "" || emacs
+
+# Web Browser
+super + w
+     $BROWSER
+
+# Colorpicker
+super + c
+   colorpicker --short --one-shot --preview | xsel -b
+
+# Screenshots
+super + s
+     file="$(date +%Y.%m.%d-%M%S).png" && maim ~/pictures/screenshots/$file && \
+     notify-send "screenshot" "Image saved to ~/Pictures/screenshots/$file"
+
+super + shift + s
+     maimpick
+
+# Htop Monitor
+super + h
+        $TERMINAL -e htop
+
+# Shortcut Editing/Reloading
+super + k 
+        emacs ~/.config/sxhkd/sxhkdrc && notify-send "Keyboard Shortcuts" "Editing shortcuts"
+super + shift + k
+        sudo killall sxhkd && sxhkd && notify-send "Keyboard Shortcuts" "Keyboard shortcuts reloaded"
+
+# Authy
+control + alt + a
+     authy
+
+# Audio 
+XF86AudioMute
+        amixer -q -D pulse sset Master toggle  && dwmstatus
+XF86Audio{Raise,Lower}Volume
+      pactl -- set-sink-volume 0 {+,-}10% && dwmstatus
+
+# Brightness
+XF86MonBrightnessUp
+        brightnessctl s +10% && notify-send "Brightness" "Brightness increased"
+XF86MonBrightnessDown
+        brightnessctl s 10%- && notify-send "Brightness" "Brightness decreased"
+
+# Microphone Toggle
+super + alt + control + space
+    amixer set Capture toggle &&  dwmstatus && amixer get Capture | grep '\[off\]' && notify-send "Microphone" "Microphone muted" || notify-send "Microphone" "Microphone on"
+
+# Bluetooth
+super + shift + b
+       blueman-manager
+	   

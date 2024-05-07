@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+# Craig Jennings <c@cjennings.net>
+# DWM convenience script for changing backlight
+# depends on xbacklight
+
+increment=10
+
+case $1 in
+	"max")
+		sudo xbacklight -set 100%;
+		;;
+	"min")
+		sudo xbacklight -set 5%;
+		;;
+	"up")
+		# get current setting as an int
+		current=$( printf "%.0f" "$(xbacklight -get)" )
+
+		# add the increment
+		newvalue=$(("$current" + "$increment"))
+
+		# don't let the brightness go above 100
+		[ "$newvalue" -ge 100 ] && 	newvalue=100;
+
+		# set the value
+		xbacklight -set "$newvalue";
+		;;
+	"down")
+		current=$( printf "%.0f" "$(xbacklight -get)" )
+		newvalue=$(("$current" - "$increment"))
+		[ "$newvalue" -le 5 ] && 	newvalue=5;
+		xbacklight -set "$newvalue";
+		;;
+esac
+newvalue=$( printf "%.0f" "$(xbacklight -get)")
+notify-send "backlight" "backlight now set to $newvalue"

@@ -1,0 +1,10 @@
+{
+  "default": [
+    {
+      "action": "remove",
+      "match_type": "not_one_of",
+      "query": "Biography & Autobiography, Chess, Cooking, Critical Theory, Economics, Fiction, French, History, Law, Linguistics, Literature, Magic, Mathematics, Mythology, Non Fiction, Philosophy, Poetry, Political Science, Politics, Psychology, Religion, Science, Social Critique, Software",
+      "replace": ""
+    }
+  ]
+}

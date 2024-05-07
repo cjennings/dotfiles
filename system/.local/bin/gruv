@@ -1,0 +1,3 @@
+#!/bin/bash
+dir=$pwd
+for file in $(ls $dir | shuf) ; do mpv --no-video "$file"; done

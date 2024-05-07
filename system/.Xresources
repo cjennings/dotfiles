@@ -1,0 +1,76 @@
+!! X Font Settings
+
+!! below is the framework laptop dpi
+!!Xft.dpi: 144
+Xcursor.size: 32
+Xcursor.theme: Vimix-white-cursors
+
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+!! Emacs
+Emacs*toolBar: 0
+
+!! Transparency (0-1):
+!! *.alpha: 0.8
+
+! Gruvbox colors
+! #define gruvbox_bg         #282828
+! I prefer black as the background color
+#define gruvbox_bg         #000000
+#define gruvbox_fg         #ebdbb2
+#define gruvbox_red        #fb4934
+#define gruvbox_green      #b8bb26
+#define gruvbox_yellow     #fabd2f
+#define gruvbox_blue       #83a598
+#define gruvbox_purple     #d3869b
+#define gruvbox_aqua       #8ec07c
+#define gruvbox_gray       #928374
+#define gruvbox_orange     #fe8019
+
+! ST (suckless terminal) settings
+st.font: FiraCode Nerd Font Mono:size=12
+st.background:  gruvbox_bg
+st.foreground:  gruvbox_fg
+st.color0:      gruvbox_bg
+st.color1:      gruvbox_red
+st.color2:      gruvbox_green
+st.color3:      gruvbox_yellow
+st.color4:      gruvbox_blue
+st.color5:      gruvbox_purple
+st.color6:      gruvbox_aqua
+st.color7:      gruvbox_fg
+st.color8:      gruvbox_gray
+st.color9:      gruvbox_red
+st.color10:     gruvbox_green
+st.color11:     gruvbox_yellow
+st.color12:     gruvbox_blue
+st.color13:     gruvbox_purple
+st.color14:     gruvbox_aqua
+st.color15:     gruvbox_fg
+
+! XTerm settings
+XTerm*faceName: FiraCode Nerd Font Mono:size=12
+XTerm*selectToClipboard: true
+XTerm*background:  gruvbox_bg
+XTerm*foreground:  gruvbox_fg
+XTerm*color0:      gruvbox_bg
+XTerm*color1:      gruvbox_red
+XTerm*color2:      gruvbox_green
+XTerm*color3:      gruvbox_yellow
+XTerm*color4:      gruvbox_blue
+XTerm*color5:      gruvbox_purple
+XTerm*color6:      gruvbox_aqua
+XTerm*color7:      gruvbox_fg
+XTerm*color8:      gruvbox_gray
+XTerm*color9:      gruvbox_red
+XTerm*color10:     gruvbox_green
+XTerm*color11:     gruvbox_yellow
+XTerm*color12:     gruvbox_blue
+XTerm*color13:     gruvbox_purple
+XTerm*color14:     gruvbox_aqua
+XTerm*color15:     gruvbox_fg

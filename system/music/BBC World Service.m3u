@@ -1,0 +1,41 @@
+#EXTM3U
+#RADIOBROWSERUUID:98adecf7-2683-4408-9be7-02d3f9098eb8
+#EXTINF:1,BBC World Service
+http://stream.live.vc.bbcmedia.co.uk/bbc_world_service
+
+#RADIOBROWSERUUID:35c98744-7d97-4739-9c48-3161f1155cc6
+#EXTINF:1,BBC World Service
+http://open.live.bbc.co.uk/mediaselector/5/select/version/2.0/mediaset/http-icy-mp3-a/vpid/bbc_world_service/format/pls.pls
+
+#RADIOBROWSERUUID:59e28043-e349-43a2-8695-ab67ff30b77e
+#EXTINF:1,BBC World Service for East Asia
+https://stream.live.vc.bbcmedia.co.uk/bbc_world_service_east_asia
+
+#RADIOBROWSERUUID:961e70ca-0601-11e8-ae97-52543be04c81
+#EXTINF:1,WRVO-3 BBC World Service Stream - Oswego, NY
+http://playerservices.streamtheworld.com/m3u/WRVOHD3.m3u
+
+#RADIOBROWSERUUID:3e1ea4e1-aac3-4617-93e3-b35b67b1ff86
+#EXTINF:1,BBC World Service
+http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/sbr_vlow/ak/bbc_world_service.m3u8
+
+#RADIOBROWSERUUID:14b6c684-bb7c-4926-b2a3-fd5a02bf7867
+#EXTINF:1,BBC World Service
+http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/sbr_low/ak/bbc_world_service.m3u8
+
+#RADIOBROWSERUUID:96248807-0601-11e8-ae97-52543be04c81
+#EXTINF:1,WYPR-HD2 BBC World Service Stream - Baltimore, MD
+http://provisioning.streamtheworld.com/pls/WYPR_HD2AAC.pls
+
+#RADIOBROWSERUUID:964d751a-0601-11e8-ae97-52543be04c81
+#EXTINF:1,KUER 90.1 HD2 Salt Lake City, UT (BBC World Service) [low]
+http://audio.kuer.org:8000/kuer2low
+
+#RADIOBROWSERUUID:9613cb5d-0601-11e8-ae97-52543be04c81
+#EXTINF:1,KUER 90.1 HD2 Salt Lake City, UT (BBC World Service) [high]
+http://audio.kuer.org:8000/kuer2high
+
+#RADIOBROWSERUUID:a347209e-6ce6-4c94-81ed-003c1275188f
+#EXTINF:1,BBC World Service
+https://stream.live.vc.bbcmedia.co.uk/bbc_world_service_east_asia
+

@@ -1,0 +1,24 @@
+{
+  "extra_customization": [
+    "",
+    "",
+    "",
+    null,
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    false
+  ],
+  "format_map": [
+    "epub",
+    "mobi",
+    "pdf"
+  ],
+  "read_metadata": true,
+  "save_template": "{author_sort}/{title} - {authors}",
+  "use_author_sort": false,
+  "use_subdirs": true
+}

@@ -1,0 +1,37 @@
+#EXTM3U
+#RADIOBROWSERUUID:81001fc1-72fd-483c-91f7-8475bdc8bbc4
+#EXTINF:1,Surf Rock Radio
+http://139.162.89.191:8020/radio.mp3
+
+#RADIOBROWSERUUID:2a05de15-62ba-4221-b530-3031fd27ca26
+#EXTINF:1,Caprice - Surf Rock
+http://79.111.119.111:8002/surfrock
+
+#RADIOBROWSERUUID:4bb8a5b0-ea88-4b3d-8c44-b99d3d8e5d9e
+#EXTINF:1,Surf Rock Radio
+http://139.162.89.191:8020/radio.mp3
+
+#RADIOBROWSERUUID:fd966a77-6c7b-40be-b1c0-a7f8d56579dc
+#EXTINF:1,Radio Surf Rock
+https://streaming.live365.com/a06592
+
+#RADIOBROWSERUUID:421c9216-dd9e-4e70-993a-708a47e5c29a
+#EXTINF:1,Caprice - Surf Rock
+http://79.111.119.111:8002/surfrock
+
+#RADIOBROWSERUUID:96446fd7-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio Caprice - Surf Rock
+http://79.111.119.111:8000/surfrock
+
+#RADIOBROWSERUUID:86ee76c0-1e09-4799-ba9b-3c3211ea3859
+#EXTINF:1,Radio Caprice - Surf Rock
+http://79.111.119.111:8000/surfrock
+
+#RADIOBROWSERUUID:16c1f981-289e-4b47-af2c-2c3356fd519d
+#EXTINF:1,Surf Rock Radio
+http://139.162.89.191:8020/radio.mp3
+
+#RADIOBROWSERUUID:1cf0eb0c-927f-4983-bdea-c0b6527fe52f
+#EXTINF:1,Radio Caprice - Surf Rock
+http://79.111.119.111:8000/surfrock
+

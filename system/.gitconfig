@@ -1,0 +1,17 @@
+[user]
+	email = c@cjennings.net
+	name = Craig Jennings
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true 
+[fetch]
+	prune = true
+[merge]
+	tool = meld
+[core]
+	editor = emacs
+[safe]
+	directory = /home/cjennings/.dotfiles
+[help]
+	autocorrect = 1

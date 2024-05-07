@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# remember location
+export SRCDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+# download and install latest calibre
+sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
+
+# install current plugins and config
+# tar -xf $SRCDIR/../assets/calibre.tar.gz -C ~/.config/

@@ -1,0 +1,9 @@
+#EXTM3U
+#RADIOBROWSERUUID:96077079-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio Swiss Classic German
+http://stream.srg-ssr.ch/m/rsc_de/mp3_128
+
+#RADIOBROWSERUUID:964a181c-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio Swiss Classic German
+http://www.radioswissclassic.ch/de/live/aacp32.m3u
+

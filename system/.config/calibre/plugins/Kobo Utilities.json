@@ -1,0 +1,34 @@
+{
+  "Devices": {
+    "8de75c8a-f9b6-405c-86a3-515afd1e71fa": {
+      "active": true,
+      "backupOptionsStore": {
+        "backupCopiesToKeepSpin": 10,
+        "backupDestDirectory": "/home/cjennings/Documents/kobo",
+        "backupEachCOnnection": true,
+        "backupZipDatabase": true,
+        "doDailyBackp": false
+      },
+      "location_code": "main",
+      "name": "Kobo Libra 2",
+      "serial_no": "N4181C1037466",
+      "type": "Kobo Libra 2",
+      "updateOptionsStore": {
+        "doEarlyFirmwareUpdate": false,
+        "doFirmwareUpdateCheck": true,
+        "firmwareUpdateCheckLastTime": 0
+      },
+      "uuid": "8de75c8a-f9b6-405c-86a3-515afd1e71fa"
+    }
+  },
+  "commonOptionsStore": {
+    "buttonActionDevice": "",
+    "buttonActionLibrary": "",
+    "individualDeviceOptions": true
+  },
+  "updateOptionsStore": {
+    "doEarlyFirmwareUpdate": false,
+    "doFirmwareUpdateCheck": false,
+    "firmwareUpdateCheckLastTime": 1656213583
+  }
+}

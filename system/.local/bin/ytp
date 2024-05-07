@@ -1,0 +1,1 @@
+yt-dlp --ignore-config --yes-playlist --add-metadata -i -o '%(channel)s-%(playlist_title)s-%(playlist_index)s-%(title)s.%(ext)s' $1 $2 $3 $4

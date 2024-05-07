@@ -1,0 +1,13 @@
+#!/bin/sh
+# Requires maim, xdotool, and dmenu
+# Uses dmenu to choose the type of screenshot to take, 
+
+case "$(printf "full screen\\nselected area\\ncurrent window\\nselected area (copy)\\ncurrent window (copy)\\nfull screen (copy)" | dmenu -l 6 -i -p "Screenshot which area?")" in
+	"full screen") file="$(date +%Y.%m.%d-%M%S).png" && maim ~/pictures/screenshots/$file  && notify-send "Image selection saved to ~/pictures/screenshots/$file" ;;
+	"full screen (5 sec delay)") file="$(date +%Y.%m.%d-%M%S).png" && sleep 5 && maim ~/pictures/screenshots/$file  && notify-send "Image selection saved to ~/pictures/screenshots/$file" ;;
+    "selected area") file="$(date +%Y.%m.%d-%M%S).png" && maim -s ~/pictures/screenshots/$file  && notify-send "Image selection saved to ~/pictures/screenshots/$file" ;;
+	"current window") maim -i "$(xdotool getactivewindow)" '~/pictures/screenshots/$(date +%Y.%m.%d-%M%S).png'  && notify-send "Image selection saved to ~/pictures/screenshots/" ;;
+	"selected area (copy)") maim -s | xclip -selection clipboard -t image/png && notify-send "Image selection copied to clipboard." ;;
+	"current window (copy)") maim -i "$(xdotool getactivewindow)" | xclip -selection clipboard -t image/png && notify-send "Image selection copied to clipboard." ;;
+	"full screen (copy)") maim | xclip -selection clipboard -t image/png && notify-send "Image copied to clipboard." ;;
+esac

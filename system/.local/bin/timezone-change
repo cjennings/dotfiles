@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+# Craig Jennings <c@cjennings.net>
+
+# Convenience script since I can't ever remember the two part TZ identifier to
+# change timezones.
+
+case $1 in
+    "eastern"|"ny"|"nyc"|"boston"|"dc")
+        sudo timedatectl set-timezone "US/Eastern"
+        ;;
+    "central"|"nola"|"home"|"chicago")
+        sudo timedatectl set-timezone "US/Central"
+        ;;
+    "mountain")
+        sudo timedatectl set-timezone "US/Mountain"
+        ;;
+    "pacific"|"sf"|"oakland"|"berkeley"|"hb"|"california")
+        sudo timedatectl set-timezone "US/Pacific"
+        ;;
+    "london"|"england"|"britain"|"gb")
+        sudo timedatectl set-timezone "Europe/London"
+        ;;
+    "hawaii")
+        sudo timedatectl set-timezone "US/Hawaii"
+        ;;
+    "armenia"|"yerevan")
+        sudo timedatectl set-timezone "Asia/Yerevan"
+        ;;
+    "greece"|"athens")
+        sudo timedatectl set-timezone "Europe/Athens"
+        ;;
+    "germany"|"berlin")
+        sudo timedatectl set-timezone "Europe/Berlin"
+        ;;
+    "turkey"|"istanbul")
+        sudo timedatectl set-timezone "Europe/Istanbul"
+        ;;
+    "portugal"|"lisbon")
+        sudo timedatectl set-timezone "Europe/Portugal"
+        ;;
+    "spain"|"madrid")
+        sudo timedatectl set-timezone "Europe/Madrid"
+        ;;
+    "france"|"paris")
+        sudo timedatectl set-timezone "Europe/Paris"
+        ;;
+    "italy"|"rome"|"naples"|"ischia")
+        sudo timedatectl set-timezone "Europe/Rome"
+        ;;
+    "austria"|"vienna")
+        sudo timedatectl set-timezone "Europe/Vienna"
+        ;;
+    "japan"|"tokyo")
+        sudo timedatectl set-timezone "Asia/Tokyo"
+        ;;
+    "jamaica")
+        sudo timedatectl set-timezone "America/Jamaica"
+        ;;
+    "st_lucia"|"grenadines"|"st_vincent"|"nevis"|"st_kitts"|"puerto_rico")
+        sudo timedatectl set-timezone "America/Puerto_Rico"
+        ;;
+    *)
+        echo
+        "Invalid option chosen."
+        echo
+        "Some valid options are: eastern, central, pacific, rome, london, st_lucia, italy, france, spain ."
+        ;;
+esac

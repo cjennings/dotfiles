@@ -1,0 +1,5 @@
+#!/bin/sh
+# allows user to open a calibre book using dmenu 
+
+find  ~/Library/ -type f \( -iname \*.pdf -o -iname \*.epub \) | dmenu -i -l 20 -p "Choose an ebook:" 
+

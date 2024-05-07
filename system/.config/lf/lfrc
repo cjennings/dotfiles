@@ -1,0 +1,333 @@
+# lffc
+# Craig Jennings <c@cjennings.net>
+#
+
+
+##########################################################################
+# BASIC SETTINGS                                                         #
+##########################################################################
+
+set ratios 1:2:3
+set cleaner ~/.config/lf/cleaner    # path to cleaner script
+set previewer ~/.config/lf/preview  # path to preview script
+set preview							# turn on previews
+
+set nohidden						# don't show hidden files. '.' toggles
+set incsearch true					# incremental searching
+set drawbox							# draw boxes around panes
+set noicons							# turn on icons
+set ignorecase						# ignore case in sorting & searching
+set filesep " "						# separate files w/ space not newline
+
+set shell sh
+set shellopts '-eu'
+
+##########################################################################
+# REMOVE SOME DEFAULT BINDINGS                                           #
+##########################################################################
+
+map m
+map o
+map n
+map "'"
+map '"'
+map d
+map c
+map e
+map f
+
+##########################################################################
+# BASIC COMMANDS                                                         #
+##########################################################################
+
+map . set hidden! # toggle hidden files
+map p paste
+map x cut
+map y copy
+map H top
+map L bottom
+map R reload
+map C clear
+map U unselect
+
+##########################################################################
+# LF CONFIG EDIT/NAV
+##########################################################################
+
+# LF CONFIG
+#edit lfrc
+map elf $$EDITOR ~/.config/lf/lfrc	&!
+
+# goto lf dir
+map glf cd ~/.config/lf/
+
+# reload lfrc
+map <f-5> push :source<space>~/.config/lf/lfrc<enter>
+
+##########################################################################
+# CUSTOM COMMANDS                                                        #
+##########################################################################
+
+# SET WALLPAPER BACKGROUND
+map bg $nitrogen --save --set-zoom-fill "$f"
+
+# ROTATE IMAGE 90 degrees clockwise
+map 90 mogrify -rotate 90 "$f"
+
+# DETOX FILENAME
+map dtx $detox "$f"
+
+# COPY FILE PATH
+map Y $echo "$fx" | clip
+
+# ADD TO DOTFILES REPO
+map atd /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME add "$f"
+
+
+##########################################################################
+# NAVIGATION / FILE MANAGEMENT                                           #
+##########################################################################
+
+### MAIN
+map mh. $mv "$f" ~
+map ch. $cp "$f" ~
+map gh. cd ~
+
+map mdx $mv "$f" ~/documents
+map cdx $cp "$f" ~/documents
+map gdx cd ~/documents
+
+map mdl $mv "$f" ~/downloads
+map cdl $cp "$f" ~/downloads
+map gdl cd ~/downloads
+
+### PICTURES
+map mpx $mv "$f" ~/pictures
+map cpx $cp "$f" ~/pictures
+map gpx cd ~/pictures
+
+map mps $mv "$f" ~/pictures/screenshots
+map cps $cp "$f" ~/pictures/screenshots
+map gps cd ~/pictures/screenshots
+
+map mpw $mv "$f" ~/pictures/wallpaper
+map cpw $cp "$f" ~/pictures/wallpaper
+map gpw cd ~/pictures/wallpaper
+
+### MAME
+
+map mmr $mv "$f" ~/.mame/roms
+map cmr $cp "$f" ~/.mame/roms
+map gmr cd ~/.mame/roms
+map owm /usr/bin/mame "$f"
+
+### MISC
+map gtc  cd ~/downloads/torrents/complete
+map gulb cd /usr/local/bin
+map gp0  cd ~/.vids
+map mp0  $mv "$f" ~/.vids
+
+map gmv  cd ~/movies
+map mmv  $mv "$f" ~/movies
+
+##########################################################################
+# OPEN WITH COMMANDS                                                     #
+##########################################################################
+
+# open with vlc video player (default: mpv)
+map owv $vlc "$f"
+
+# open with gimp  (default: nsxiv)
+map owg $gimp "$f"
+
+# open with zathura (default emacs pdf-tools)
+map owz $zathura "$f"
+
+# open with audacious
+map owa $audacious "$f"
+
+##########################################################################
+# FILE OPERATION                                                         #
+##########################################################################
+
+
+# RENAME
+# 
+cmd rename %[ -e $1 ] && printf "file exists" || mv "$f" $1
+map r push :rename<space>
+
+
+# OPEN
+# 
+# Called when current file is not a directory.
+cmd open ${{
+    # if text or json file
+    case $(file --mime-type "$f" -bL) in
+        text/*|application/json) $EDITOR "$f";;
+
+        *) xdg-open "$f" ;;
+    esac
+}}
+map <enter> open
+
+
+# DELETE
+#
+cmd delete $rm -rf "$fx"
+map dd delete
+
+map <delete> delete
+
+# MKDIR
+#
+cmd mkdir ${{
+  printf "Directory Name: "
+  read ans
+  mkdir $ans
+}}
+map md mkdir
+
+
+# MKFILE
+#
+cmd mkfile ${{
+  printf "File Name: "
+  read ans
+  $EDITOR $ans
+}}
+map mf mkfile
+
+
+# SUDO MKFILE
+#
+cmd sudomkfile ${{
+  printf "File Name: "
+  read ans
+  sudo $EDITOR $ans
+}}
+map mr sudomkfile
+
+
+# CHMOD
+#
+cmd chmod ${{
+  printf "Mode Bits: "
+  read ans
+  for file in "$fx"
+  do
+    chmod $ans $file
+  done
+  lf -remote 'send reload'
+}}
+map ch chmod
+
+
+######################################################################## #
+# COMPRESSION FUNCTIONS                                                  #
+######################################################################## #
+
+# EXTRACT
+cmd extract ${{
+  case "$f" in
+       *.tar.bz2)   tar xjf "$f"    ;;
+       *.tar.gz)    tar xzf "$f"    ;;
+       *.bz2)       bunzip2 "$f"    ;;
+       *.rar)       rar x "$f"      ;;
+       *.gz)        gunzip "$f"     ;;
+       *.tar)       tar xf "$f"     ;;
+       *.tbz2)      tar xjf "$f"    ;;
+       *.tgz)       tar xzf "$f"    ;;
+       *.zip)       unzip "$f"      ;;
+       *.Z)         uncompress "$f" ;;
+      *) echo "Unsupported format" ;;
+  esac
+}}
+map ex extract
+
+
+# TARGZ
+# tar.gz current or selected files
+# 
+cmd targz ${{
+    set -f
+    mkdir $1
+    cp -r "$fx" $1
+    tar czf $1.tar.gz $1
+    rm -rf $1
+}}
+map tgz targz
+
+
+# ZIP
+# zip current file or selected files
+cmd zip ${{
+    set -f
+    mkdir $1
+    cp -r "$fx" $1
+    zip -r $1.zip $1
+    rm -rf $1
+}}
+map zip zip
+
+
+######################################################################## #
+# MISCELLANEOUS CONVENIENCE COMMANDS                                     #
+######################################################################## #
+
+
+# PACMAN INSTALL
+#
+cmd pacman_install ${{
+  case "$f" in
+    *.pkg.tar.xz|*.pkg.tar.gz|*.pkg.tar.zst) sudo pacman -U "$f" ;;
+	*) echo "This doesn't look like an Arch package, so not installing."
+}}
+
+
+# MP3
+# convert audio file to mp3
+#
+cmd mp3 ${{
+    set -f
+    outname=$(echo "$f" | cut -f 1 -d '.')
+    lame -V --preset extreme $f "${outname}.mp3"
+}}
+
+
+######################################################################## #
+# FZF HELPER FUNCTIONS                                                   #
+######################################################################## #
+
+
+# FZF-JUMP
+# 
+# jump to file or directory with c-f
+cmd fzf_jump ${{
+    res="$(find . -maxdepth 1 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
+    if [ -d "$res" ] ; then
+        cmd="cd"
+    elif [ -f "$res" ] ; then
+        cmd="select"
+    else
+        exit 0
+    fi
+    lf -remote "send $id $cmd \"$res\""
+}}
+map <c-f> :fzf_jump
+
+
+# FZF-SEARCH
+#
+# search contents of files in current directory, then select a file
+cmd fzf_search ${{
+    res="$( \
+        RG_PREFIX="rg --column --line-number --no-heading --color=always \
+            --smart-case "
+        FZF_DEFAULT_COMMAND="$RG_PREFIX ''" \
+            fzf --bind "change:reload:$RG_PREFIX {q} || true" \
+            --ansi --layout=reverse --header 'Search in files' \
+            | cut -d':' -f1
+    )"
+    [ ! -z "$res" ] && lf -remote "send $id select \"$res\""
+}}
+map gs :fzf_search

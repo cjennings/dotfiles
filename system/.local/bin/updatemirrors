@@ -1,0 +1,20 @@
+#!/bin/sh
+# cjennings generates arch linux mirror list
+echo "Updating mirrorlist. Please be patient. This may take a few minutes...."
+echo " "
+
+sudo reflector \
+          --connection-timeout 3 \
+          --download-timeout 3 \
+          --protocol https \
+		  --country US \
+		  --age 18 \
+          --latest 20 \
+          --score 10 \
+          --fastest 5 \
+		  --sort score \
+          --save /etc/pacman.d/mirrorlist > /dev/null 2>&1 
+
+cat /etc/pacman.d/mirrorlist
+echo " "
+echo "Done."

@@ -1,0 +1,17 @@
+#!/bin/sh
+# Craig Jennings <c@cjennings.net>
+
+# sets timezone based on the ip-address when there's network connectivity
+
+# Check network status
+if ping -q -c 1 -W 1 google.com >/dev/null; then
+    NEW_TIMEZONE="$(curl --fail --silent https://ipapi.co/timezone)"
+    if sudo timedatectl set-timezone "$NEW_TIMEZONE"; then
+        notify-send "Setting timezone to $NEW_TIMEZONE successul."
+    else
+        notify-send "Attempt to set timezone failed."
+    fi
+else
+    notify-send "No network connection detected. Cannot set timezone automatically."
+fi
+dwmstatus

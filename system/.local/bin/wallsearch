@@ -1,0 +1,43 @@
+#!/bin/bash
+
+walldir="$HOME/Pictures/wallpaper/incoming"
+tmpdir="$HOME/.wallsearch"
+maxpage=5
+tagoptions="CANCEL\n#minimalism\n#digital art\n#4K\n#nature\n#abstract\n#landscape\n#cityscape\n#surf\n#technology"
+sortoptions="CANCEL\ndate_added\nrelevance\nrandom\nfavorites\ntoplist"
+
+if [ -d $tmpdir ]; then
+    rm -rf $tmpdir
+fi
+mkdir -p $tmpdir 
+
+if [ -z $1 ]; then
+   query=$(echo -e $tagoptions | dmenu -p "Search Wallhaven: " -i)
+else
+   query=$1
+fi
+
+[ $query == "CANCEL" ] && notify-send "Cancelled wallpaper search." && exit 0;
+
+sorting=$(echo -e $sortoptions | dmenu -p "Sort Order: " -i)
+
+[ $sorting == "CANCEL" ] && notify-send "Cancelled wallpaper search." && exit 0;
+
+query="$(sed 's/#//g' <<<$query)"
+query="$(sed 's/ /+/g' <<<$query)"
+echo #query
+
+notify-send "wallsearch" "Searching wallpapers..."
+
+for i in $(seq 1 10);
+do
+    curl -s https://wallhaven.cc/api/v1/search\?atleast\=1920x1080\&sorting\=$sorting\&q\=$query\&purity=111\&page\=$i > tmp.txt
+    page=$(cat tmp.txt | jq '.' | grep -Eoh "https:\/\/w\.wallhaven.cc\/full\/.*(jpg|png)\b")
+    wget -nc -P $tmpdir $page
+    notify-send "wallsearch" "Searching wallpapers..."
+done
+
+rm tmp.txt
+notify-send "wallsearch" "Done searching wallpaper."
+sxiv -to $tmpdir/* | xargs -I % mv % $walldir 
+#rm -rf $tmpdir

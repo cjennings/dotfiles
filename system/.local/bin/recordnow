@@ -1,0 +1,26 @@
+#!/usr/bin/env sh
+# Craig Jennings <c@cjennings.net>
+
+# Start a screen recording using ffmpeg to capture the entire
+# screen along with all audio and the microphone.
+
+# Make sure that ffmpeg is in the path and the destination directory
+# exists.
+
+LOCATION="$HOME/videos/recordings"
+NAME=$(date +'%Y-%m-%d-%H-%M-%S')
+echo $NAME
+
+# create the directory if it doesn't exist
+if [ ! -d "$LOCATION" ]; then
+  mkdir -p "$LOCATION"
+fi
+
+# error out if ffmpeg isn't installed
+if ! command -v ffmpeg &> /dev/null
+then
+    echo "ERROR: ffmpeg couldn't be found. Please ensure it's installed and added to your PATH."
+    exit
+fi
+
+ffmpeg -framerate 30 -f x11grab -i :0.0+ -f pulse -i alsa_input.pci-0000_00_1b.0.analog-stereo -ac 1 -f pulse -i alsa_output.pci-0000_00_1b.0.analog-stereo.monitor -ac 2 "$LOCATION/$NAME".mkv

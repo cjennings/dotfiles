@@ -1,0 +1,33 @@
+#!/bin/bash
+
+if [ "$(printf "On\\nOff" | dmenu -i -p "Set airplane mode:")" = "On" ]
+then
+    notify-send "Airplane Mode"  "Turning on airplane mode...."
+    sudo systemctl stop  bluetooth.service
+    sudo systemctl stop  expressvpn.service
+    sudo systemctl stop  sshd.service
+    sudo systemctl stop  syncthing@cjennings.service
+    sudo systemctl stop  avahi-daemon.service
+    sudo systemctl stop  cronie.service
+    sudo systemctl stop  cups.service            
+    sudo ip link set wlp170s0 down
+    sudo systemctl stop  wpa_supplicant.service
+    sudo systemctl stop  NetworkManager.service
+    sudo nmcli radio all off
+    sudo powertop --auto-tune
+    notify-send "Airplane Mode" "Airplane mode is now on."
+else
+    notify-send "Airplane Mode" "Turning off airplane mode....."
+    sudo nmcli radio wifi on
+    sudo systemctl start  NetworkManager.service
+    sudo systemctl start  wpa_supplicant.service
+    sudo ip link set wlp170s0 up
+    sudo systemctl start  bluetooth.service
+    sudo systemctl start  expressvpn.service
+    sudo systemctl start  sshd.service
+    sudo systemctl start  syncthing@cjennings.service
+    sudo systemctl start  avahi-daemon.service
+    sudo systemctl start  cronie.service
+    sudo systemctl start  cups.service            
+    notify-send "Airplane Mode" "Airplane mode is now off."
+fi

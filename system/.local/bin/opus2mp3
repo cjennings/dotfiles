@@ -1,0 +1,3 @@
+#!/bin/sh
+# Craig Jennings Monday, April 25, 2022 
+for f in *.opus; do ffmpeg -i "$f" -codec:v copy -codec:a libmp3lame -q:a 2 "${f%.opus}.mp3"; done

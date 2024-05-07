@@ -1,0 +1,4 @@
+ #!/bin/sh
+ EMACS_PID=`pgrep emacs`
+ cd /home/cjennings/Projects/emacs/src
+ exec -a debug-emacs $TERM -e gdb /usr/local/bin/emacs $EMACS_PID

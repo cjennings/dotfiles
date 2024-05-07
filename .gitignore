@@ -1,0 +1,7 @@
+/system/.ssh/id_ed25519
+/system/.ssh/id_ed25519.pub
+/system/.config/calibre/dynamic.pickle.json
+/system/.config/calibre/gui.json
+/system/.config/calibre/tweak_book_gui.json
+/system/.config/sublime-merge/Packages/
+/system/.config/sublime-merge/Local/Session.sublime_session

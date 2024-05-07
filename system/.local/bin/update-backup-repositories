@@ -1,0 +1,49 @@
+#!/bin/sh
+# Craig Jennings <c@cjennings.net>
+# updates or clones repositories for backup
+
+REPOS_HOME="/media/repos/"
+
+# Create REPOS_HOME dir if not exists
+if [ ! -d "$REPOS_HOME" ]; then
+    mkdir -p "$REPOS_HOME"
+fi
+
+# Make sure REPOS_HOME dir is writable
+if [ ! -w "$REPOS_HOME" ]; then
+    echo "Directory $REPOS_HOME is not writable."
+    exit 1
+fi
+
+# Make sure git is available
+if ! command -v git >/dev/null 2>&1; then
+    echo "Git command does not exist. Please install git."
+    exit 1
+fi
+
+cd $REPOS_HOME
+
+repos="
+git@cjennings.net:archsetup.git
+git@cjennings.net:dmenu.git
+git@cjennings.net:dotemacs.git
+git@cjennings.net:dotfiles.git
+git@cjennings.net:dwm.git
+git@cjennings.net:pinentry-dmenu.git
+git@cjennings.net:rsyncshot.git
+git@cjennings.net:st.git
+git@github.com:cjennings/emacs-wttrin.git
+https://github.com/d12frosted/elpa-mirror.git
+https://github.com/mirrors/emacs.git
+"
+
+for repo in $repos; do
+    dir=$(basename "$repo" .git)
+    if [ -d "$REPOS_HOME$dir" ]; then
+        echo "Repository $dir exists, pulling..."
+        (cd "$dir" && git pull)
+    else
+        echo "Repository $dir doesn't exist, cloning..."
+        git clone --depth 1 "$repo"
+    fi
+done

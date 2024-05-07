@@ -1,0 +1,4 @@
+#!/bin/sh
+# Craig Jennings <c@cjennings.net>
+
+sudo zfs destroy -rR zroot@lkg && sudo zfs snapshot -r zroot@lkg && echo "lkg snapshot reset" || echo "lkg snapshot failed!"

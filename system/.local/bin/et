@@ -1,0 +1,2 @@
+#!/bin/sh
+emacsclient -c -nw --alternate-editor="" $1 $2 $3 $4 & 

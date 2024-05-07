@@ -1,0 +1,100 @@
+#!/usr/bin/env bash
+
+echo ""
+
+# Check parameter
+if [ "$#" -ne 1 ] || [ "$1" != "start" ] && [ "$1" != "end" ]; then
+    echo "This script must be called with either 'start' or 'end' as a parameter."
+    exit 1
+fi
+
+CHECK_MARK="\033[0;32m\xE2\x9C\x94\033[0m"
+CLEAR_LINE="\033[1K"
+
+# Define directories to process
+project_dirs="$HOME/projects"
+code_dirs="$HOME/code"
+sync_dirs="$HOME/sync"
+
+
+# Git pull quietly unless there's an error
+git_maybe_pull() {
+    git fetch --quiet
+    if ! git diff --quiet HEAD FETCH_HEAD; then
+        git pull --quiet
+
+        # clear line and message
+        echo -ne "\033[1K"
+        echo -e "\\rpulled remote changes into $1"
+    fi
+}
+
+# Git stash quietly unless there's an error
+git_stash () {
+    git stash > /dev/null 2>&1 || \
+        echo "git stash error in $1: $? "
+}
+
+# Git stash pop quietly unless there's an error
+git_stash_pop () {
+    git stash pop > /dev/null 2>&1 || \
+        echo "git stash error in $1: $? "
+}
+
+# Function to process a directory
+process_directory() {
+    if [ -d "$1/.git" ]; then
+        # Check remote repository
+        cd "$1"
+
+        # skip URLs with http/s URLS as they're directories cloned for reference only
+        # skip git directories with no remote repository associated as well
+        remote_url=$(git config --get remote.origin.url)
+        if [ -n "$remote_url" ]; then
+            # if remote URL is http or https or empty, skip the directory
+            if [ -z "$remote_url" ] || echo "$remote_url" | grep -E -q "^(http|https)://"; then
+                return
+            fi
+
+            # clear line and update directory
+            echo -ne "$CLEAR_LINE"
+            echo -ne "\\rchecking: $1 "
+
+            if [ "$2" = "start" ]; then
+                if [ -n "$(git status --porcelain)" ]; then
+                    # notify user of uncommitted work
+                    echo ""; echo ">>>> uncommitted work found in $1";
+
+                    # git stash, pull latest files, then pop uncommitted work
+                    git_stash "$1"
+                    git_maybe_pull "$1"
+                    git_stash_pop "$1"
+                else
+                    # retrieve any latest changes
+                    git_maybe_pull "$1"
+                fi
+            elif [ "$2" = "end" ]; then
+                # Check for uncommitted work
+                if [ -n "$(git status --porcelain)" ]; then
+                    echo ""; echo ">>>> Uncommitted work found in $1. <<<<";  echo ""
+                fi
+                return  # Skip pulling changes
+            fi
+        fi
+    fi
+}
+
+# Process directories
+for directory in "$project_dirs"/*; do
+    process_directory "$directory" "$1"
+done
+for directory in "$sync_dirs"/*; do
+    process_directory "$directory" "$1"
+done
+for directory in "$code_dirs"/*; do
+    process_directory "$directory" "$1"
+done
+
+# clear line and message finished
+echo -ne "\033[1K"
+echo -ne "\\rfinished.\n"

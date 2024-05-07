@@ -1,0 +1,61 @@
+{
+  "OpenWithMenus": {
+    "Menus": [
+      {
+        "active": false,
+        "appArgs": "",
+        "appPath": "firefox",
+        "format": "EPUB",
+        "image": "owp_firefox.png",
+        "menuText": "EPUBReader (EPUB)",
+        "subMenu": ""
+      },
+      {
+        "active": false,
+        "appArgs": "-c",
+        "appPath": "/usr/bin/emacsclient",
+        "format": "PDF",
+        "image": "reader.png",
+        "menuText": "Emacsclient",
+        "subMenu": ""
+      },
+      {
+        "active": true,
+        "appArgs": "",
+        "appPath": "/usr/bin/zathura",
+        "format": "EPUB",
+        "image": "edit_book.png",
+        "menuText": "Zathura (EPUB)",
+        "subMenu": ""
+      },
+      {
+        "active": true,
+        "appArgs": "",
+        "appPath": "/usr/bin/zathura",
+        "format": "PDF",
+        "image": "PDF.png",
+        "menuText": "Zathura (PDF)",
+        "subMenu": ""
+      },
+      {
+        "active": false,
+        "appArgs": "-c",
+        "appPath": "/usr/bin/emacsclient",
+        "format": "EPUB",
+        "image": "PDF.png",
+        "menuText": "Emacsclient",
+        "subMenu": ""
+      },
+      {
+        "active": false,
+        "appArgs": "",
+        "appPath": "gimp",
+        "format": "COVER",
+        "image": "owp_gimp.png",
+        "menuText": "Gimp (Cover)",
+        "subMenu": ""
+      }
+    ],
+    "UrlColWidth": 202
+  }
+}

@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+# battery_monitor
+# Intended to be run via .xinitrc
+# - Exit automatically if no battery (desktop)
+# - When below 15%, warn user of low battery
+# - When below 10%, suspend within 10 seconds if not charging
+#
+# Craig Jennings <c@cjennings.net>
+
+# check if acpi is installed
+if ! command -v acpi &> /dev/null; then
+	echo "acpi is not installed. Cannot continue. Exiting...."
+	exit 1
+fi
+
+# exit if a battery exists
+if [ ! -d "/sys/class/power_supply/BAT0" ] && [ ! -d "/sys/class/power_supply/BAT1" ]; then
+	echo "Acpi is installed but no battery detected. Assuming this is a desktop and exiting...."
+	exit 1
+fi
+
+while true; do
+	# Get the current battery percentage using acpi
+	battery_percentage=$(acpi -b | awk -F ', ' '{print $2}' | tr -d '%')
+	# battery_percentage=$(acpi -b | awk -F ', ' '{print $2}' | sed 's/%//')
+
+	# When below 10%, suspend within 10 seconds if not charging
+	if [ "$battery_percentage" -lt 11 ] && ! acpi -a | grep -q -r "online" ; then
+		# Send a notification of sleeping in 10 seconds
+		notify-send "Critical Battery" "Battery is at $battery_percentage%. System entering sleep in 10 seconds."
+
+		# sleep for 10 seconds, then abort if charging
+		sleep 10
+
+		# Check if the system is charging (AC adapter connected)
+		if acpi -a | grep -q -r "on-line"; then
+			notify-send "Charging" "The system is now charging. No action taken."
+		else
+			notify-send "Critical Battery" "Putting the system to sleep."
+			sudo systemctl suspend
+		fi
+	fi
+
+	# When below 15%, warn user
+	if [ "$battery_percentage" -lt 15 ] && ! acpi -a | grep -q "online" ; then
+		# Send a notification using notify-send and dunst
+		notify-send "Low Battery" "Battery is at $battery_percentage%. System will automatically sleep at 10%"
+	fi
+
+	# Sleep for 5 minutes before checking again
+	sleep 300
+done

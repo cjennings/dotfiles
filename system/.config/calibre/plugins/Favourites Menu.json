@@ -1,0 +1,59 @@
+{
+  "menus": [
+    {
+      "display": "View default list",
+      "path": [
+        "Reading List",
+        "View default list"
+      ]
+    },
+    null,
+    {
+      "display": "Add to default list",
+      "path": [
+        "Reading List",
+        "Add to default list"
+      ]
+    },
+    {
+      "display": "Remove from default list",
+      "path": [
+        "Reading List",
+        "Remove from default list"
+      ]
+    },
+    {
+      "display": "Edit default list",
+      "path": [
+        "Reading List",
+        "Edit default list"
+      ]
+    },
+    {
+      "display": "Extract ISBN",
+      "path": [
+        "Extract ISBN"
+      ]
+    },
+    {
+      "display": "Clean Comments",
+      "path": [
+        "Clean Comments"
+      ]
+    },
+    {
+      "display": "Convert books",
+      "path": [
+        "Convert Books"
+      ]
+    },
+    null,
+    {
+      "display": "Start Content server",
+      "path": [
+        "Connect Share",
+        "Start Content server"
+      ]
+    }
+  ]
+}

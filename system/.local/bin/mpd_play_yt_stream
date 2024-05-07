@@ -1,0 +1,14 @@
+#!/bin/bash
+#
+MYHOST='127.0.0.1' # or your MPD host
+
+mpduri="$(yt-dlp -f best -g $1)#"
+# mpduri="$(yt-dlp -g $1)#"
+# TAG=$(yt-dlp -i --get-filename $1) 
+# cadena="{\"title\":\"$TAG\"}"
+# echo "$cadena"
+# mpduri="$mpduri$cadena"
+# echo "$mpduri"
+mpc insert "$mpduri"
+mpc next
+mpc play

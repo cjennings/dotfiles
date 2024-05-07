@@ -1,0 +1,13 @@
+#EXTM3U
+#RADIOBROWSERUUID:9628ea33-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio Swiss Classic Italian
+http://www.radioswissclassic.ch/it/live/aacp.m3u
+
+#RADIOBROWSERUUID:b6202b76-06b4-11e8-ae97-52543be04c81
+#EXTINF:1,Radio Swiss Classic Italian
+http://www.radioswissclassic.ch/it/live/aacp32.m3u
+
+#RADIOBROWSERUUID:1ff4a420-f6a8-4c09-8084-5cc834882cd2
+#EXTINF:1,Radio Swiss Classic Italian
+https://stream.srg-ssr.ch/rsc_it/aacp_96.m3u
+

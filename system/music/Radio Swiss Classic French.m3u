@@ -1,0 +1,9 @@
+#EXTM3U
+#RADIOBROWSERUUID:9645be61-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio Swiss Classic French
+http://www.radioswissclassic.ch/fr/live/aacp.m3u
+
+#RADIOBROWSERUUID:964a1754-0601-11e8-ae97-52543be04c81
+#EXTINF:1,Radio Swiss Classic French
+http://www.radioswissclassic.ch/fr/live/aacp32.m3u
+

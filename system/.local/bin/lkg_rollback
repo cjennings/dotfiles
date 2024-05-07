@@ -1,0 +1,12 @@
+#!/bin/sh
+
+sudo zfs rollback -rR zroot/var@lkg
+sudo zfs rollback -rR zroot/var/log@lkg
+sudo zfs rollback -rR zroot/usr@lkg
+sudo zfs rollback -rR zroot/usr/home@lkg
+sudo zfs rollback -rR zroot/ROOT/default@lkg
+sudo zfs rollback -rR zroot/ROOT@lkg
+sudo zfs rollback -rR zroot@lkg
+
+echo ""; echo "rollback complete. rebooting..."
+sudo shutdown -r now

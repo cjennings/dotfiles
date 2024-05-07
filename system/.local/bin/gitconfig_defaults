@@ -1,0 +1,5 @@
+git config --global user.email "craigmartinjennings@gmail.com"
+git config --global user.name "Craig Jennings""
+git config --global merge.tool meld
+git config --global core.editor "emacsclient -c -a''"
+git config --global fetch.prune true

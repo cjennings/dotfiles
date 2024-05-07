@@ -1,0 +1,6 @@
+#!/bin/bash
+# Craig Jennings <craigmartinjennings@gmail.com>
+# tired of pushing to multiple locations with multiple commands
+/usr/bin/git --git-dir="$HOME"/.dotfiles/ --work-tree="$HOME" push origin main && \
+/usr/bin/git --git-dir="$HOME"/.dotfiles/ --work-tree="$HOME" push source main && \
+/usr/bin/git --git-dir="$HOME"/.dotfiles/ --work-tree="$HOME" push github main

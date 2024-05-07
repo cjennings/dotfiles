@@ -1,0 +1,28 @@
+#!/bin/bash
+# Craig Jennings <c@cjennings.net>
+# Outputs a process's memory usage in multiple size units.
+
+# Get a list of all processes
+procs=$(ps aux --sort=-%mem | awk '{print $2, $4, $11}' | fzf)
+
+# Check if a process was selected
+if [ -z "$procs" ]; then
+	echo "No process selected."
+	exit 1
+fi
+
+# Get the PID of the selected process (first field)
+PID=$(echo $procs | awk '{print $1}')
+
+# Get the process name
+PROCNAME=$(ps -p $PID -o comm=)
+
+# Get the memory usage
+KB=$(pmap -x $PID | grep total | awk '{print $4}')
+
+# Convert to MB and GB
+MB=$(echo "scale=2; $KB / 1024" | bc)
+GB=$(echo "scale=2; $MB / 1024" | bc)
+
+# Print the memory usage
+printf "$PROCNAME (pid $PID) mem usage: $KB KB | $MB MB | $GB GB\n\n"

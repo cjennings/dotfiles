@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>lineedit_history_choose_library_dialog</key>
+	<array>
+		<string>/home/cjennings/sync/books</string>
+		<string>/home/cjennings/books</string>
+		<string>/home/cjennings/Library</string>
+	</array>
+	<key>lineedit_history_preferences_setting_auto_add_path</key>
+	<array>
+		<string>/home/cjennings/downloads/ebooks</string>
+		<string>/home/cjennings/</string>
+		<string>/home/cjennings/Downloads/ebooks</string>
+		<string>/home/cjennings/Downloads/eBooks</string>
+		<string>/home/cjennings/Documents/eBooks</string>
+	</array>
+	<key>lineedit_history_tag_browser_search</key>
+	<array/>
+</dict>
+</plist>

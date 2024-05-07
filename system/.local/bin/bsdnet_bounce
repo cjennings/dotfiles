@@ -1,0 +1,6 @@
+if [ $(id -u) -eq 0 ]
+then
+    service netif restart && service routing restart
+else
+    echo "You must be root to run this script"
+fi

@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+# Craig Jennings <c@cjennings.net>
+# starts the dwm process for a login manager
+# saves the logfile of any output to a logfile
+
+dbus-update-activation-environment &
+
+logdir="$HOME/.local/var/logs"
+logfile="$logdir/$(date +%Y-%m-%d_%H.dwm.log)"
+
+if ! [ -d "$logdir" ]; then
+    mkdir -p "$logdir"
+fi
+
+# allow sudo use of display
+xhost si:localuser:root
+
+# merge local configuration for X client aplications
+[ -f ~/.Xresources ] && xrdb -merge -I $HOME ~/.Xresources
+
+# merge xmodmap configuration
+[[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
+
+# start desktop environment applications
+emacs --daemon &
+xautolock -time 10 -locker slock &
+sudo powertop --auto-tune &
+nm-applet &
+blueman-applet &
+alarm-clock-applet --hidden &
+battery_monitor &
+mpd &
+caffeine &
+dunst &
+nitrogen --restore &
+(conky | while read LINE; do xsetroot -name "$LINE"; done) &
+
+# start dwm
+echo "$(date): Starting dwm" >> "$logfile" 2>&1
+exec dwm > $logfile 2>&1

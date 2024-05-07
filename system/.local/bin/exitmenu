@@ -1,0 +1,16 @@
+#!/bin/sh
+
+CHOICES="Shutdown\nReboot\nLock\nHibernate\nSuspend\nToggle Airplane Mode\nToggle Powersave Mode"
+CHOSEN=$(echo -e "$CHOICES" | dmenu -i)
+
+case $CHOSEN in
+     "Shutdown") shutdown now ;;
+     "Reboot") reboot ;;
+     "Lock") xscreensaver-command --lock ;;
+     "Hiberbate") systemctl hibernate ;;
+     "Suspend") systemctl suspend ;;
+     "Toggle Airplane Mode") airplanemodetoggle ;;
+     "Toggle Powersave Mode") lowpowertoggle &&  notify-send "Battery Status" "$(acpi -b)" ;;
+esac
+
+dwmstatus
